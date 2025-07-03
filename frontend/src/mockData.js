@@ -1,4 +1,4 @@
-// Mock data for MINDhaus Consulting website - Updated with StoryBrand structure
+// Mock data for MINDhaus Consulting website - Clean version
 export const mockData = {
   hero: {
     title: "Architektur & Beratung für Unternehmen im Wandel",
@@ -13,7 +13,7 @@ export const mockData = {
     hero: "Unternehmen, die in Digitalisierung und Wissenstransfer Unterstützung brauchen",
     problems: [
       "Digitale Transformation stockt",
-      "Wissen bleibt isoliert",
+      "Wissen bleibt isoliert", 
       "Fehlende Strategiearchitektur & Tool-Auswahl"
     ],
     solution: "MINDhaus – mit über 10 Jahren Logistik- & HR-Erfahrung, globalem Netzwerk aus Dubai",
@@ -31,7 +31,7 @@ export const mockData = {
     title: "Gründerin & CEO",
     description: "Mit über 10 Jahren Erfahrung in Logistik, HR und IT bei internationalen Unternehmen wie Dachser und DSV Road GmbH bringe ich echte Praxis-Expertise in die Digitalisierung. Mein Fokus liegt auf Wissenstransfer und der Architektur digitaler Lösungen für Konzerne und Mittelstand.",
     quote: "Dubai als Innovation-Hub – Zugang zu Experten, Agenturen und Vordenkern weltweit.",
-    image: "https://images.unsplash.com/photo-1736939678218-bd648b5ef3bb", // Placeholder - will be replaced with actual CEO photo
+    image: "https://images.unsplash.com/photo-1736939678218-bd648b5ef3bb",
     stats: {
       experience: "10+",
       projects: "50+",
@@ -61,7 +61,7 @@ export const mockData = {
     },
     {
       id: 3,
-      title: "Tool-Auswahl & Implementierung",
+      title: "Tool-Auswahl & Implementierung", 
       description: "Passende Technologie-Lösungen für Ihre Herausforderungen",
       icon: "⚙️",
       benefits: ["Bedarfsanalyse", "Vendor-Evaluation", "Rollout-Support"],
@@ -99,36 +99,50 @@ export const mockData = {
       image: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg"
     },
     {
-      id: 2,
+      id: 2, 
       text: "Die Expertise von Marwa und ihrem Team hat uns geholfen, unsere HR-Prozesse zu revolutionieren. Absolut empfehlenswert!",
       author: "Michael K.",
       company: "Dachser Group",
       rating: 5,
       image: "https://images.unsplash.com/photo-1698047682129-c3e217ac08b7"
+    },
+    {
+      id: 3,
+      text: "Durch die strategische Beratung konnten wir unsere Effizienz um 60% steigern. Vielen Dank für die professionelle Unterstützung!",
+      author: "Anna L.",
+      company: "DSV Road GmbH", 
+      rating: 5,
+      image: "https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg"
     }
   ],
 
   contact: {
     email: "hello@mindhaus-consulting.com",
     phone: "+971 50 123 4567",
-    address: "Dubai, UAE",
+    address: "RAKEZ, VAE",
     linkedin: "https://linkedin.com/in/marwa-toprak"
   },
 
-  // New: Office and team placeholders
+  // Office and team placeholders
   officeImages: [
     "https://images.unsplash.com/photo-1718220216044-006f43e3a9b1",
     "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg",
     "https://images.unsplash.com/photo-1698047682129-c3e217ac08b7",
-    "https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg",
-    "https://images.pexels.com/photos/32844868/pexels-photo-32844868.jpeg"
+    "https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg"
   ],
 
   // Trust signals
   clientLogos: [
-    "Dachser Group",
+    "Dachser Group", 
     "DSV Road GmbH",
     "International Logistics",
     "Dubai Tech Hub"
-  ]
+  ],
+
+  // Company info
+  company: {
+    name: "Mindhaus Consulting FZ-LLC",
+    location: "RAKEZ, VAE",
+    fullName: "Mindhaus Consulting FZ-LLC | RAKEZ, VAE"
+  }
 };
