@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
+import { Button } from './ui/button';
 import { mockData } from '../mockData';
 
 const Services = () => {
   const [selectedFilter, setSelectedFilter] = useState('all');
+  const [selectedService, setSelectedService] = useState(null);
   
   const filters = ['all', 'Sales', 'Marketing', 'HR', 'Service', 'Operations'];
   
@@ -13,15 +15,61 @@ const Services = () => {
     : mockData.services.filter(service => service.areas.includes(selectedFilter));
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4">
+        {/* Large Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">
-            Unsere Leistungen
-          </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Ganzheitliche Beratung, Strategie & KI-Architektur – für Unternehmen mit echtem Digitalisierungsbedarf.
-          </p>
+          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 rounded-3xl p-12 text-white mb-12 relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full"></div>
+              <div className="absolute bottom-10 left-10 w-24 h-24 bg-white rounded-full"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-white rounded-full"></div>
+            </div>
+            
+            <div className="relative z-10">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6">
+                Unsere Leistungen
+              </h2>
+              <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-4xl mx-auto">
+                Ganzheitliche Beratung, Strategie & KI-Architektur – für Unternehmen mit echtem Digitalisierungsbedarf
+              </p>
+              
+              {/* Video/Image Placeholder */}
+              <div className="relative max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl mb-8">
+                <img 
+                  src="https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg" 
+                  alt="Services Overview" 
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Two CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                >
+                  Kostenlose Beratung starten
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+                >
+                  Service-Portfolio herunterladen
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Filter Buttons */}
@@ -30,10 +78,10 @@ const Services = () => {
             <button
               key={filter}
               onClick={() => setSelectedFilter(filter)}
-              className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
                 selectedFilter === filter
-                  ? 'bg-emerald-500 text-white shadow-lg scale-105'
-                  : 'bg-white text-slate-600 hover:bg-emerald-50 hover:text-emerald-600'
+                  ? 'bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 text-white shadow-lg scale-105 glow-effect'
+                  : 'bg-white text-slate-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-emerald-50 hover:text-blue-600 border border-slate-200'
               }`}
             >
               {filter === 'all' ? 'Alle Bereiche' : filter}
@@ -42,12 +90,30 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {filteredServices.map((service) => (
             <Card 
               key={service.id} 
-              className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 shadow-lg overflow-hidden"
+              className={`group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 shadow-lg overflow-hidden cursor-pointer ${
+                service.featured ? 'md:col-span-2 lg:col-span-1' : ''
+              }`}
+              onClick={() => setSelectedService(service)}
             >
+              {/* Service Header Image */}
+              {service.headerImage && (
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.headerImage} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white font-bold text-lg">{service.title}</h3>
+                  </div>
+                </div>
+              )}
+
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between mb-4">
                   <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
@@ -57,21 +123,30 @@ const Services = () => {
                     {service.areas.map((area) => (
                       <Badge 
                         key={area} 
-                        variant="secondary" 
-                        className="text-xs bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+                        className={`text-xs transition-all duration-300 ${
+                          area === 'Sales' ? 'bg-blue-100 text-blue-700 hover:bg-blue-200' :
+                          area === 'Marketing' ? 'bg-purple-100 text-purple-700 hover:bg-purple-200' :
+                          area === 'HR' ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-200' :
+                          'bg-gradient-to-r from-blue-100 to-emerald-100 text-slate-700 hover:from-blue-200 hover:to-emerald-200'
+                        }`}
                       >
                         {area}
                       </Badge>
                     ))}
                   </div>
                 </div>
-                <CardTitle className="text-xl font-bold text-slate-800 group-hover:text-emerald-600 transition-colors duration-300">
-                  {service.title}
-                </CardTitle>
+                
+                {!service.headerImage && (
+                  <CardTitle className="text-xl font-bold text-slate-800 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-emerald-600 group-hover:bg-clip-text transition-all duration-300">
+                    {service.title}
+                  </CardTitle>
+                )}
+                
                 <CardDescription className="text-slate-600 text-base">
                   {service.description}
                 </CardDescription>
               </CardHeader>
+              
               <CardContent>
                 <div className="space-y-3">
                   <h4 className="font-semibold text-slate-700 text-sm uppercase tracking-wide">
@@ -80,41 +155,145 @@ const Services = () => {
                   <ul className="space-y-2">
                     {service.benefits.map((benefit, index) => (
                       <li key={index} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <div className={`w-2 h-2 rounded-full ${
+                          index % 3 === 0 ? 'bg-blue-500' :
+                          index % 3 === 1 ? 'bg-purple-500' : 'bg-emerald-500'
+                        }`}></div>
                         <span className="text-slate-600">{benefit}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 
+                {/* Featured Service Highlight */}
+                {service.featured && (
+                  <div className="mt-4 p-3 bg-gradient-to-r from-blue-50 via-purple-50 to-emerald-50 rounded-lg border border-blue-200">
+                    <span className="text-sm font-medium text-blue-700">
+                      ⭐ Unser Hauptfokus: Strategische Beratung für nachhaltige Transformation
+                    </span>
+                  </div>
+                )}
+                
                 {/* Hover Effect */}
                 <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full"></div>
+                  <div className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 rounded-full"></div>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
+        {/* Service Detail Modal/Expanded View */}
+        {selectedService && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50" onClick={() => setSelectedService(null)}>
+            <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+              <div className="relative">
+                <img 
+                  src={selectedService.headerImage} 
+                  alt={selectedService.title}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <h2 className="text-3xl font-bold mb-2">{selectedService.title}</h2>
+                  <p className="text-xl opacity-90">{selectedService.description}</p>
+                </div>
+                <button 
+                  onClick={() => setSelectedService(null)}
+                  className="absolute top-4 right-4 w-10 h-10 bg-black/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/40 transition-colors duration-300"
+                >
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M14.348 5.652a.5.5 0 0 0-.707 0L10 9.293 6.36 5.652a.5.5 0 1 0-.707.707L9.293 10l-3.64 3.641a.5.5 0 0 0 .707.707L10 10.707l3.641 3.641a.5.5 0 0 0 .707-.707L10.707 10l3.641-3.641a.5.5 0 0 0 0-.707z"/>
+                  </svg>
+                </button>
+              </div>
+              
+              <div className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-xl font-bold mb-4 text-slate-800">Vorteile & Outcomes</h3>
+                    <ul className="space-y-3">
+                      {selectedService.benefits.map((benefit, index) => (
+                        <li key={index} className="flex items-start space-x-3">
+                          <div className={`w-6 h-6 rounded-full flex items-center justify-center mt-0.5 ${
+                            index % 3 === 0 ? 'bg-blue-100 text-blue-600' :
+                            index % 3 === 1 ? 'bg-purple-100 text-purple-600' : 'bg-emerald-100 text-emerald-600'
+                          }`}>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                              <path d="M10 3L4.5 8.5 2 6"/>
+                            </svg>
+                          </div>
+                          <span className="text-slate-700">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-xl font-bold mb-4 text-slate-800">Anwendungsbereiche</h3>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {selectedService.areas.map((area) => (
+                        <Badge 
+                          key={area} 
+                          className={`px-4 py-2 ${
+                            area === 'Sales' ? 'bg-blue-100 text-blue-700' :
+                            area === 'Marketing' ? 'bg-purple-100 text-purple-700' :
+                            area === 'HR' ? 'bg-emerald-100 text-emerald-700' :
+                            'bg-gradient-to-r from-blue-100 to-emerald-100 text-slate-700'
+                          }`}
+                        >
+                          {area}
+                        </Badge>
+                      ))}
+                    </div>
+                    
+                    <Button 
+                      size="lg" 
+                      className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 hover:from-blue-700 hover:via-purple-700 hover:to-emerald-700 text-white font-semibold py-3 rounded-lg transition-all duration-300"
+                    >
+                      Beratung für {selectedService.title} anfragen
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Case Studies Teaser */}
-        <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-slate-800 mb-4">
+        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 rounded-2xl p-8 text-white">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold mb-4">
               Praxisbeispiele & Success Stories
             </h3>
-            <p className="text-slate-600 mb-6">
+            <p className="text-xl opacity-90 mb-6">
               Erfahren Sie, wie wir anderen Unternehmen geholfen haben, ihre Digitalisierungsziele zu erreichen.
             </p>
-            <div className="flex justify-center space-x-4">
-              <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
-                <span className="text-emerald-600 font-bold">HR</span>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold">HR</span>
               </div>
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-blue-600 font-bold">CRM</span>
+              <h4 className="font-semibold mb-2">Mitarbeiter-Onboarding</h4>
+              <p className="text-sm opacity-90">50% schnellere Einarbeitung durch KI-gestützte Prozesse</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold">CRM</span>
               </div>
-              <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
-                <span className="text-emerald-600 font-bold">KI</span>
+              <h4 className="font-semibold mb-2">Sales-Automatisierung</h4>
+              <p className="text-sm opacity-90">300% Steigerung der Lead-Qualifikation</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold">KI</span>
               </div>
+              <h4 className="font-semibold mb-2">Predictive Analytics</h4>
+              <p className="text-sm opacity-90">Vorhersage-Genauigkeit von 95% erreicht</p>
             </div>
           </div>
         </div>
