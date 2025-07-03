@@ -15,35 +15,35 @@ const PainPoints = () => {
           </p>
         </div>
 
-        {/* Pain Points Table */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        {/* Pain Points Grid - 2x3 Layout (6 items) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {mockData.painPoints.map((item, index) => (
-            <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <CardHeader className="pb-4">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" className="text-red-600">
-                      <path d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8S12.42 0 8 0zM7 3h2v6H7V3zm0 8h2v2H7v-2z"/>
+            <Card key={index} className="bg-white shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <CardHeader className="pb-3">
+                <div className="flex items-center space-x-2 mb-3">
+                  <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" className="text-red-600">
+                      <path d="M6 0C2.69 0 0 2.69 0 6s2.69 6 6 6 6-2.69 6-6S9.31 0 6 0zM5.25 2.25h1.5v4.5h-1.5v-4.5zm0 6h1.5v1.5h-1.5v-1.5z"/>
                     </svg>
                   </div>
-                  <span className="text-red-600 font-semibold text-sm">PROBLEM</span>
+                  <span className="text-red-600 font-medium text-xs uppercase tracking-wide">Problem</span>
                 </div>
-                <CardTitle className="text-xl font-bold text-slate-800 mb-4">
+                <CardTitle className="text-lg font-bold text-slate-800 mb-3 leading-tight">
                   {item.problem}
                 </CardTitle>
               </CardHeader>
               
-              <CardContent>
-                <div className="border-t-2 border-emerald-100 pt-4">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" className="text-emerald-600">
-                        <path d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8S12.42 0 8 0zM6.5 12L2 7.5 3.5 6l3 3 6-6L14 4.5 6.5 12z"/>
+              <CardContent className="pt-0">
+                <div className="border-t-2 border-emerald-100 pt-3">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" className="text-emerald-600">
+                        <path d="M6 0C2.69 0 0 2.69 0 6s2.69 6 6 6 6-2.69 6-6S9.31 0 6 0zM4.875 9L1.5 5.625 2.625 4.5l2.25 2.25 4.5-4.5L10.5 3.375 4.875 9z"/>
                       </svg>
                     </div>
-                    <span className="text-emerald-600 font-semibold text-sm">LÖSUNG</span>
+                    <span className="text-emerald-600 font-medium text-xs uppercase tracking-wide">Lösung</span>
                   </div>
-                  <p className="text-slate-700 font-medium">
+                  <p className="text-slate-700 font-medium text-sm leading-relaxed">
                     {item.solution}
                   </p>
                 </div>

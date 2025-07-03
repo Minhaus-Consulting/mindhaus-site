@@ -1,4 +1,4 @@
-// Mock data for MINDhaus Consulting website - SEO optimized content
+// Mock data for MINDhaus Consulting website - Updated with client requirements
 export const mockData = {
   seo: {
     title: "Dubai Mindhaus Consulting | KI-Automatisierung Sales & Marketing",
@@ -23,7 +23,10 @@ export const mockData = {
     problems: [
       "Zu wenig qualifizierte Leads",
       "Sales-Cycle zu lang", 
-      "Recruiting dauert Monate"
+      "Recruiting dauert Monate",
+      "Manuelle Datenerfassung",
+      "Ineffiziente Kampagnen",
+      "Hohe Personalkosten"
     ],
     solution: "KI-Automatisierung mit bewährten Tools und Workshops aus Dubai",
     plan: [
@@ -40,7 +43,7 @@ export const mockData = {
     title: "Gründerin & CEO",
     description: "Mit über 10 Jahren Erfahrung in Logistik, HR und IT bei internationalen Unternehmen wie Dachser und DSV Road GmbH spezialisiere ich mich auf KI-Automatisierung für Sales, Marketing und HR. Mein Fokus liegt auf messbaren Ergebnissen und nachhaltiger Prozessoptimierung.",
     quote: "Dubai als Innovation-Hub – Zugang zu den neuesten KI-Tools und globalen Experten.",
-    image: "https://images.unsplash.com/photo-1736939678218-bd648b5ef3bb",
+    image: "https://images.pexels.com/photos/8353820/pexels-photo-8353820.jpeg",
     stats: {
       experience: "10+",
       projects: "50+",
@@ -57,7 +60,7 @@ export const mockData = {
       featured: true,
       benefits: ["Datengetriebene Buyer-Journey", "Full-Funnel-Tracking", "+40 % Lead-Generierung"],
       areas: ["Marketing", "Sales", "Analytics"],
-      headerImage: "https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg",
+      headerImage: "https://images.pexels.com/photos/7709197/pexels-photo-7709197.jpeg",
       results: "+40% Lead-Generierung"
     },
     {
@@ -67,7 +70,7 @@ export const mockData = {
       icon: "🤖",
       benefits: ["AI-gestützte Outreach-Sequenzen", "Predictive Lead Scoring", "-30 % Sales-Cycle-Zeit"],
       areas: ["Sales", "Marketing", "AI"],
-      headerImage: "https://images.unsplash.com/photo-1698047682129-c3e217ac08b7",
+      headerImage: "https://images.unsplash.com/photo-1551135049-8a33b5883817",
       results: "-30% Sales-Cycle-Zeit"
     },
     {
@@ -77,7 +80,7 @@ export const mockData = {
       icon: "👥",
       benefits: ["KI-gestütztes CV-Screening", "Self-Service-Portale", "-50 % Admin-Aufwand"],
       areas: ["HR", "Recruiting", "Automation"],
-      headerImage: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg",
+      headerImage: "https://images.unsplash.com/photo-1650784854790-fb6c2ed400d3",
       results: "-50% Admin-Aufwand"
     },
     {
@@ -87,7 +90,7 @@ export const mockData = {
       icon: "🛠️",
       benefits: ["Markt- & Tech-Research", "Hands-on-Workshops", "Dedizierte Expertenteams"],
       areas: ["Tools", "Training", "Implementation"],
-      headerImage: "https://images.pexels.com/photos/32844868/pexels-photo-32844868.jpeg",
+      headerImage: "https://images.pexels.com/photos/8127697/pexels-photo-8127697.jpeg",
       results: "Schnelle Umsetzung"
     }
   ],
@@ -104,6 +107,51 @@ export const mockData = {
     {
       problem: "Recruiting dauert Monate",
       solution: "AI-Screening & automatisiertes Onboarding implementieren"
+    },
+    {
+      problem: "Manuelle Datenerfassung",
+      solution: "Intelligente Formulare & automatische Datenverarbeitung"
+    },
+    {
+      problem: "Ineffiziente Kampagnen",
+      solution: "KI-optimierte Zielgruppenansprache & Performance-Tracking"
+    },
+    {
+      problem: "Hohe Personalkosten",
+      solution: "Automatisierte Workflows & Self-Service-Portale einführen"
+    }
+  ],
+
+  whyMindhaus: [
+    {
+      title: "Kosteneffizientes Arbeiten",
+      description: "Transparente Preismodelle ohne versteckte Kosten",
+      icon: "💰"
+    },
+    {
+      title: "Transparentes Projektmanagement",
+      description: "Echtzeitabrechnungen und vollständige Kostenkontrolle",
+      icon: "📊"
+    },
+    {
+      title: "Flexible Zahlungsoptionen",
+      description: "Zahlung in Dirham, US-Dollar, Euro und Kryptowährungen möglich",
+      icon: "💳"
+    },
+    {
+      title: "Weltweit abrufbares Team",
+      description: "Experten für Groß- und kleine Digitalisierungsprojekte verfügbar",
+      icon: "🌍"
+    },
+    {
+      title: "Dubai Innovation Hub",
+      description: "Zugang zu neuesten Technologien und globalen Partnerschaften",
+      icon: "🚀"
+    },
+    {
+      title: "Praxiserprobte Methoden",
+      description: "Bewährte Frameworks aus 10+ Jahren Beratungserfahrung",
+      icon: "✅"
     }
   ],
 
@@ -131,6 +179,18 @@ export const mockData = {
     {
       question: "Muss mein Team programmieren können?",
       answer: "Nein. Wir wählen No-/Low-Code-Tools und schulen dein Team in praxisnahen Workshops."
+    },
+    {
+      question: "Wie schnell sehen wir erste Ergebnisse?",
+      answer: "Die ersten automatisierten Prozesse sind meist nach 2-4 Wochen live. Messbare ROI-Verbesserungen zeigen sich typischerweise nach 8-12 Wochen."
+    },
+    {
+      question: "Arbeiten Sie auch mit kleineren Unternehmen?",
+      answer: "Ja, wir haben skalierbare Lösungen für Unternehmen jeder Größe – von Startups bis zu Konzernen."
+    },
+    {
+      question: "Welche Tools und Plattformen nutzen Sie?",
+      answer: "Wir sind technologie-agnostisch und wählen die besten Tools für Ihren Use Case – von HubSpot über Zapier bis zu maßgeschneiderten KI-Lösungen."
     }
   ],
 
@@ -143,7 +203,7 @@ export const mockData = {
       author: "CMO",
       company: "SoftTech GmbH",
       rating: 5,
-      image: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg"
+      image: "https://images.pexels.com/photos/8353820/pexels-photo-8353820.jpeg"
     },
     {
       id: 2, 
@@ -151,7 +211,7 @@ export const mockData = {
       author: "Head of Sales",
       company: "Dachser Group",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1698047682129-c3e217ac08b7"
+      image: "https://images.unsplash.com/photo-1551135049-8a33b5883817"
     },
     {
       id: 3,
@@ -159,31 +219,57 @@ export const mockData = {
       author: "HR Director",
       company: "DSV Road GmbH", 
       rating: 5,
-      image: "https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg"
+      image: "https://images.pexels.com/photos/7709197/pexels-photo-7709197.jpeg"
+    },
+    {
+      id: 4,
+      text: "Die transparente Projektabrechnung und flexible Zahlungsoptionen haben uns überzeugt. Professionell von A bis Z.",
+      author: "CFO",
+      company: "Deutsche Telekom",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1650784854790-fb6c2ed400d3"
+    },
+    {
+      id: 5,
+      text: "Automatisierte Workflows haben uns 50% Admin-Aufwand gespart. Das Team kann sich endlich auf strategische Aufgaben fokussieren.",
+      author: "Operations Manager",
+      company: "Dubai Tech Hub",
+      rating: 5,
+      image: "https://images.pexels.com/photos/8127697/pexels-photo-8127697.jpeg"
+    },
+    {
+      id: 6,
+      text: "Die Kombination aus Dubai-Innovation und deutscher Gründlichkeit ist perfekt für unsere internationalen Projekte.",
+      author: "Managing Director",
+      company: "Global Logistics Corp",
+      rating: 5,
+      image: "https://images.pexels.com/photos/8349428/pexels-photo-8349428.jpeg"
     }
   ],
 
   contact: {
-    email: "hello@mindhaus-consulting.com",
+    email: "info@mindhaus-consulting.ae",
+    emailSecondary: "info@mindhaus-consulting.com",
     phone: "+971 50 123 4567",
-    address: "RAKEZ, VAE",
-    linkedin: "https://linkedin.com/in/marwa-toprak"
+    address: "RAKEZ, VAE"
   },
 
   // Office and team placeholders
   officeImages: [
-    "https://images.unsplash.com/photo-1718220216044-006f43e3a9b1",
-    "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg",
-    "https://images.unsplash.com/photo-1698047682129-c3e217ac08b7",
-    "https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg"
+    "https://images.pexels.com/photos/8353820/pexels-photo-8353820.jpeg",
+    "https://images.unsplash.com/photo-1551135049-8a33b5883817",
+    "https://images.pexels.com/photos/7709197/pexels-photo-7709197.jpeg",
+    "https://images.unsplash.com/photo-1650784854790-fb6c2ed400d3"
   ],
 
-  // Trust signals
+  // Trust signals - Real company logos
   clientLogos: [
     "Dachser Group", 
     "DSV Road GmbH",
     "SoftTech GmbH",
-    "Dubai Tech Hub"
+    "Deutsche Telekom",
+    "Dubai Tech Hub",
+    "Global Logistics Corp"
   ],
 
   // Company info
