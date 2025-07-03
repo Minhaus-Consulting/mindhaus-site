@@ -19,7 +19,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-slate-300 text-sm">
-              Digitalisierung & KI-Beratung aus Dubai für Unternehmen im Wandel.
+              KI-Automatisierung für Sales, Marketing & HR aus Dubai.
             </p>
             <div className="text-sm text-slate-400">
               <div className="font-semibold text-slate-300 mb-1">{mockData.company.name}</div>
@@ -29,12 +29,12 @@ const Footer = () => {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-emerald-400">Leistungen</h3>
+            <h3 className="font-semibold text-emerald-400">KI-Services</h3>
             <ul className="space-y-2 text-sm text-slate-300">
-              <li className="hover:text-emerald-400 cursor-pointer transition-colors">Strategieberatung</li>
-              <li className="hover:text-emerald-400 cursor-pointer transition-colors">KI-Integration</li>
-              <li className="hover:text-emerald-400 cursor-pointer transition-colors">Tool-Implementierung</li>
-              <li className="hover:text-emerald-400 cursor-pointer transition-colors">Change Management</li>
+              <li className="hover:text-emerald-400 cursor-pointer transition-colors">Online-Marketing-Strategie</li>
+              <li className="hover:text-emerald-400 cursor-pointer transition-colors">Sales & Marketing Automatisierung</li>
+              <li className="hover:text-emerald-400 cursor-pointer transition-colors">HR-Automation</li>
+              <li className="hover:text-emerald-400 cursor-pointer transition-colors">Tool-Selection & Workshops</li>
             </ul>
           </div>
 
@@ -43,9 +43,9 @@ const Footer = () => {
             <h3 className="font-semibold text-emerald-400">Unternehmen</h3>
             <ul className="space-y-2 text-sm text-slate-300">
               <li className="hover:text-emerald-400 cursor-pointer transition-colors">Über uns</li>
-              <li className="hover:text-emerald-400 cursor-pointer transition-colors">Team</li>
+              <li className="hover:text-emerald-400 cursor-pointer transition-colors">Methodik</li>
+              <li className="hover:text-emerald-400 cursor-pointer transition-colors">Case Studies</li>
               <li className="hover:text-emerald-400 cursor-pointer transition-colors">Karriere</li>
-              <li className="hover:text-emerald-400 cursor-pointer transition-colors">Blog</li>
             </ul>
           </div>
 
@@ -57,17 +57,10 @@ const Footer = () => {
               <div className="hover:text-emerald-400 cursor-pointer transition-colors">
                 {mockData.contact.email}
               </div>
-              <div>{mockData.contact.phone}</div>
-              <div className="flex space-x-3 pt-2">
-                <a 
-                  href={mockData.contact.linkedin} 
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
+              <div className="hover:text-emerald-400 cursor-pointer transition-colors">
+                {mockData.contact.emailSecondary}
               </div>
+              <div>{mockData.contact.phone}</div>
             </div>
           </div>
         </div>

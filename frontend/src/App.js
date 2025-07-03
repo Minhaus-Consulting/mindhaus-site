@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import PainPoints from './components/PainPoints';
 import About from './components/About';
+import WhyMindhaus from './components/WhyMindhaus';
 import Methodology from './components/Methodology';
 import Services from './components/Services';
 import CaseStudy from './components/CaseStudy';
@@ -26,6 +27,9 @@ function App() {
         </section>
         <section id="about">
           <About />
+        </section>
+        <section id="whymindhaus">
+          <WhyMindhaus />
         </section>
         <section id="methodology">
           <Methodology />
