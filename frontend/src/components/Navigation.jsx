@@ -25,7 +25,9 @@ const Navigation = () => {
   const navItems = [
     { id: 'hero', label: 'Home' },
     { id: 'about', label: 'Über uns' },
+    { id: 'methodology', label: 'Methodik' },
     { id: 'services', label: 'Leistungen' },
+    { id: 'testimonials', label: 'Referenzen' },
     { id: 'contact', label: 'Kontakt' }
   ];
 
@@ -38,22 +40,36 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection('hero')}>
             <div className="relative">
-              <svg width="32" height="32" viewBox="0 0 32 32" className="text-emerald-500">
+              <svg width="32" height="32" viewBox="0 0 32 32" className="group-hover:scale-110 transition-transform duration-300">
+                <defs>
+                  <linearGradient id="navLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#3B82F6" />
+                    <stop offset="50%" stopColor="#8B5CF6" />
+                    <stop offset="100%" stopColor="#10B981" />
+                  </linearGradient>
+                </defs>
                 <path d="M16 2 C8 2, 2 8, 2 16 C2 24, 8 30, 16 30 C24 30, 30 24, 30 16 C30 8, 24 2, 16 2 Z" 
-                      fill="currentColor" stroke="currentColor" strokeWidth="2"/>
+                      fill="url(#navLogoGradient)" stroke="url(#navLogoGradient)" strokeWidth="2"/>
                 <path d="M16 2 C18 8, 21 14, 16 16 C11 14, 14 8, 16 2 Z" 
-                      fill="white" stroke="currentColor" strokeWidth="1"/>
+                      fill="white" stroke="url(#navLogoGradient)" strokeWidth="1"/>
               </svg>
-              <svg width="10" height="10" viewBox="0 0 10 10" className="absolute -top-1 -right-1 text-blue-500">
-                <circle cx="5" cy="5" r="4" fill="none" stroke="currentColor" strokeWidth="1"/>
-                <ellipse cx="5" cy="5" rx="1.5" ry="4" fill="none" stroke="currentColor" strokeWidth="1"/>
-                <ellipse cx="5" cy="5" rx="4" ry="1.5" fill="none" stroke="currentColor" strokeWidth="1"/>
+              <svg width="10" height="10" viewBox="0 0 10 10" className="absolute -top-1 -right-1">
+                <defs>
+                  <linearGradient id="navGlobeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#3B82F6" />
+                    <stop offset="50%" stopColor="#8B5CF6" />
+                    <stop offset="100%" stopColor="#10B981" />
+                  </linearGradient>
+                </defs>
+                <circle cx="5" cy="5" r="4" fill="none" stroke="url(#navGlobeGradient)" strokeWidth="1"/>
+                <ellipse cx="5" cy="5" rx="1.5" ry="4" fill="none" stroke="url(#navGlobeGradient)" strokeWidth="1"/>
+                <ellipse cx="5" cy="5" rx="4" ry="1.5" fill="none" stroke="url(#navGlobeGradient)" strokeWidth="1"/>
               </svg>
             </div>
             <div className={`text-lg font-bold transition-colors ${
-              isScrolled ? 'text-slate-800' : 'text-white'
+              isScrolled ? 'bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent' : 'text-white'
             }`}>
-              MIND<span className="text-emerald-500">haus</span>
+              MINDhaus
             </div>
           </div>
 
@@ -63,7 +79,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`font-medium transition-colors hover:text-emerald-500 ${
+                className={`font-medium transition-colors hover:bg-gradient-to-r hover:from-blue-600 hover:to-emerald-600 hover:bg-clip-text hover:text-transparent ${
                   isScrolled ? 'text-slate-700' : 'text-white/90'
                 }`}
               >
@@ -72,7 +88,7 @@ const Navigation = () => {
             ))}
             <Button 
               size="sm" 
-              className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 hover:from-blue-700 hover:via-purple-700 hover:to-emerald-700 text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 glow-effect"
               onClick={() => scrollToSection('contact')}
             >
               Beratung anfragen
@@ -105,7 +121,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-4 py-3 text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors"
+                className="block w-full text-left px-4 py-3 text-slate-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-emerald-50 hover:text-blue-600 transition-colors"
               >
                 {item.label}
               </button>
@@ -113,7 +129,7 @@ const Navigation = () => {
             <div className="px-4 pt-2">
               <Button 
                 size="sm" 
-                className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-full"
+                className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 hover:from-blue-700 hover:via-purple-700 hover:to-emerald-700 text-white py-3 rounded-full"
                 onClick={() => scrollToSection('contact')}
               >
                 Beratung anfragen
