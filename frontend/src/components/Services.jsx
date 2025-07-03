@@ -34,7 +34,7 @@ const Services = () => {
               {/* Video/Image Placeholder */}
               <div className="relative max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-xl mb-8">
                 <img 
-                  src="https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg" 
+                  src="https://images.pexels.com/photos/7709197/pexels-photo-7709197.jpeg" 
                   alt="KI-Automatisierung Services" 
                   className="w-full h-64 object-cover"
                 />
@@ -48,20 +48,13 @@ const Services = () => {
                 </div>
               </div>
               
-              {/* Two CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* Single CTA - removed second CTA */}
+              <div className="flex justify-center">
                 <Button 
                   size="lg" 
                   className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
-                  Kostenlose Potenzialanalyse
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
-                >
-                  KI-Roadmap herunterladen
+                  Kostenlose Potenzialanalyse anfordern
                 </Button>
               </div>
             </div>
