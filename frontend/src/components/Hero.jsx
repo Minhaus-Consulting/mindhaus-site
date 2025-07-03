@@ -21,9 +21,19 @@ const Hero = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-slate-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-slate-600 mb-6 leading-relaxed max-w-3xl mx-auto">
             {mockData.hero.subtitle}
           </p>
+
+          {/* Benefits */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            {mockData.hero.benefits.map((benefit, index) => (
+              <div key={index} className="flex items-center space-x-2 bg-emerald-50 px-4 py-2 rounded-lg">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span className="text-emerald-700 font-medium">{benefit}</span>
+              </div>
+            ))}
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -48,7 +58,7 @@ const Hero = () => {
             <div className="relative max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
               <img 
                 src={mockData.hero.videoPlaceholder} 
-                alt="MINDhaus Office" 
+                alt="KI-Automatisierung Office" 
                 className="w-full h-64 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -70,7 +80,7 @@ const Hero = () => {
             </div>
             <div className="flex items-center space-x-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-              <span>Globales Netzwerk</span>
+              <span>KI-Automatisierung</span>
             </div>
             <div className="flex items-center space-x-2">
               <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
