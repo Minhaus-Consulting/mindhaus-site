@@ -16,135 +16,96 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-60 h-60 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
+    <section className="py-20 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
             Was unsere Kunden sagen
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Erfolgsgeschichten aus der Praxis – von der Strategie bis zur Umsetzung
           </p>
         </div>
 
-        {/* Testimonial Carousel */}
-        <div className="relative max-w-4xl mx-auto">
-          <Card className="bg-white/5 backdrop-blur-sm border-slate-700 min-h-[300px] flex flex-col justify-center">
-            <CardHeader className="text-center pb-6">
-              <div className="flex justify-center mb-6">
-                <Avatar className="w-20 h-20 border-4 border-gradient-to-r from-blue-400 to-emerald-400">
-                  <AvatarImage src={testimonials[currentIndex].image} alt={testimonials[currentIndex].author} />
-                  <AvatarFallback className="bg-gradient-to-r from-blue-600 to-emerald-600 text-white text-xl">
-                    {testimonials[currentIndex].author[0]}
-                  </AvatarFallback>
-                </Avatar>
-              </div>
-              
-              {/* Stars */}
-              <div className="flex justify-center mb-4">
-                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <svg key={i} width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-yellow-400">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                ))}
-              </div>
-            </CardHeader>
-            
-            <CardContent className="text-center">
-              <blockquote className="text-xl md:text-2xl text-slate-200 leading-relaxed mb-6 italic">
-                "{testimonials[currentIndex].text}"
-              </blockquote>
-              
-              <div className="space-y-2">
-                <div className="text-lg font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                  {testimonials[currentIndex].author}
+        {/* Testimonial Grid - 3 columns on desktop, responsive */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {testimonials.map((testimonial, index) => (
+            <Card key={testimonial.id} className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <CardHeader className="text-center pb-4">
+                <div className="flex justify-center mb-4">
+                  <Avatar className="w-16 h-16 border-4 border-emerald-100">
+                    <AvatarImage src={testimonial.image} alt={testimonial.author} />
+                    <AvatarFallback className="bg-emerald-500 text-white text-lg">
+                      {testimonial.author[0]}
+                    </AvatarFallback>
+                  </Avatar>
                 </div>
-                <div className="text-slate-400">
-                  {testimonials[currentIndex].company}
+                
+                {/* Stars */}
+                <div className="flex justify-center mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <svg key={i} width="20" height="20" viewBox="0 0 20 20" fill="currentColor" className="text-yellow-400">
+                      <path d="M10 2l2.5 5.5L18 8.5l-4 4 1 6-5-2.5L5 18.5l1-6-4-4 5.5-1L10 2z"/>
+                    </svg>
+                  ))}
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-              <path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"/>
-            </svg>
-          </button>
-
-          <button
-            onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gradient-to-r from-purple-600 to-emerald-600 rounded-full flex items-center justify-center hover:from-purple-700 hover:to-emerald-700 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-400"
-          >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-              <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/>
-            </svg>
-          </button>
-        </div>
-
-        {/* Indicators */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? 'bg-gradient-to-r from-blue-400 to-emerald-400 scale-125'
-                  : 'bg-slate-600 hover:bg-slate-500'
-              }`}
-            />
+              </CardHeader>
+              
+              <CardContent className="text-center">
+                <blockquote className="text-lg text-slate-700 leading-relaxed mb-4 italic">
+                  "{testimonial.text}"
+                </blockquote>
+                
+                <div className="space-y-1">
+                  <div className="text-lg font-semibold text-slate-800">
+                    {testimonial.author}
+                  </div>
+                  <div className="text-slate-500">
+                    {testimonial.company}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
         {/* Client Logos */}
-        <div className="mt-16 text-center">
-          <h3 className="text-xl font-semibold mb-8 text-slate-300">
+        <div className="text-center">
+          <h3 className="text-xl font-semibold mb-8 text-slate-600">
             Vertrauen von führenden Unternehmen
           </h3>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {mockData.clientLogos.map((client, index) => (
               <div 
                 key={index} 
-                className="bg-white/5 backdrop-blur-sm rounded-lg px-6 py-4 border border-slate-700 hover:border-slate-600 transition-all duration-300 hover:bg-white/10"
+                className="bg-white rounded-lg px-6 py-4 shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <span className="text-slate-300 font-medium">{client}</span>
+                <span className="text-slate-600 font-medium">{client}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Stats */}
+        {/* Stats - 3 column layout */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+          <div className="text-center bg-white rounded-xl p-8 shadow-lg">
+            <div className="text-4xl font-bold text-emerald-600 mb-2">
               98%
             </div>
-            <div className="text-slate-300">Kundenzufriedenheit</div>
+            <div className="text-slate-600">Kundenzufriedenheit</div>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-emerald-400 bg-clip-text text-transparent mb-2">
+          <div className="text-center bg-white rounded-xl p-8 shadow-lg">
+            <div className="text-4xl font-bold text-blue-600 mb-2">
               150+
             </div>
-            <div className="text-slate-300">Erfolgreiche Projekte</div>
+            <div className="text-slate-600">Erfolgreiche Projekte</div>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent mb-2">
+          <div className="text-center bg-white rounded-xl p-8 shadow-lg">
+            <div className="text-4xl font-bold text-purple-600 mb-2">
               24/7
             </div>
-            <div className="text-slate-300">Support & Beratung</div>
+            <div className="text-slate-600">Support & Beratung</div>
           </div>
         </div>
       </div>
