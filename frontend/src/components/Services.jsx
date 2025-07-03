@@ -7,7 +7,7 @@ import { mockData } from '../mockData';
 const Services = () => {
   const [selectedFilter, setSelectedFilter] = useState('all');
   
-  const filters = ['all', 'Sales', 'Marketing', 'HR', 'Service', 'Operations'];
+  const filters = ['all', 'Marketing', 'Sales', 'HR', 'AI', 'Tools'];
   
   const filteredServices = selectedFilter === 'all' 
     ? mockData.services 
@@ -25,17 +25,17 @@ const Services = () => {
             
             <div className="relative z-10">
               <h2 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6">
-                Unsere Leistungen
+                Unsere KI-Automatisierung Services
               </h2>
               <p className="text-xl md:text-2xl text-slate-600 mb-8 max-w-4xl mx-auto">
-                Ganzheitliche Beratung, Strategie & KI-Architektur – für Unternehmen mit echtem Digitalisierungsbedarf
+                Von der Strategie bis zur Umsetzung – wir automatisieren Ihre Sales-, Marketing- und HR-Prozesse
               </p>
               
               {/* Video/Image Placeholder */}
               <div className="relative max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-xl mb-8">
                 <img 
                   src="https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg" 
-                  alt="Services Overview" 
+                  alt="KI-Automatisierung Services" 
                   className="w-full h-64 object-cover"
                 />
                 <div className="absolute inset-0 bg-black/20"></div>
@@ -54,14 +54,14 @@ const Services = () => {
                   size="lg" 
                   className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
-                  Kostenlose Beratung starten
+                  Kostenlose Potenzialanalyse
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg" 
                   className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
                 >
-                  Service-Portfolio herunterladen
+                  KI-Roadmap herunterladen
                 </Button>
               </div>
             </div>
@@ -80,7 +80,7 @@ const Services = () => {
                   : 'bg-white text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 border border-slate-200'
               }`}
             >
-              {filter === 'all' ? 'Alle Bereiche' : filter}
+              {filter === 'all' ? 'Alle Services' : filter}
             </button>
           ))}
         </div>
@@ -90,7 +90,9 @@ const Services = () => {
           {filteredServices.map((service) => (
             <Card 
               key={service.id} 
-              className="group hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border-0 shadow-lg overflow-hidden cursor-pointer bg-white"
+              className={`group hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border-0 shadow-lg overflow-hidden cursor-pointer bg-white ${
+                service.featured ? 'ring-2 ring-emerald-200' : ''
+              }`}
             >
               {/* Service Header Image */}
               {service.headerImage && (
@@ -103,6 +105,11 @@ const Services = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-white font-bold text-lg">{service.title}</h3>
+                    {service.results && (
+                      <div className="text-emerald-300 font-semibold text-sm mt-1">
+                        {service.results}
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
@@ -117,9 +124,10 @@ const Services = () => {
                       <Badge 
                         key={area} 
                         className={`text-xs transition-all duration-300 ${
-                          area === 'Sales' ? 'bg-blue-100 text-blue-700' :
-                          area === 'Marketing' ? 'bg-purple-100 text-purple-700' :
+                          area === 'Marketing' ? 'bg-blue-100 text-blue-700' :
+                          area === 'Sales' ? 'bg-purple-100 text-purple-700' :
                           area === 'HR' ? 'bg-emerald-100 text-emerald-700' :
+                          area === 'AI' ? 'bg-orange-100 text-orange-700' :
                           'bg-slate-100 text-slate-700'
                         }`}
                       >
@@ -143,7 +151,7 @@ const Services = () => {
               <CardContent>
                 <div className="space-y-3">
                   <h4 className="font-semibold text-slate-700 text-sm uppercase tracking-wide">
-                    Ihre Vorteile:
+                    Was Sie erwarten können:
                   </h4>
                   <ul className="space-y-2">
                     {service.benefits.map((benefit, index) => (
@@ -159,8 +167,17 @@ const Services = () => {
                 {service.featured && (
                   <div className="mt-4 p-3 bg-emerald-50 rounded-lg border border-emerald-200">
                     <span className="text-sm font-medium text-emerald-700">
-                      ⭐ Unser Hauptfokus: Strategische Beratung für nachhaltige Transformation
+                      ⭐ Beliebteste Lösung: 90% unserer Kunden starten hier
                     </span>
+                  </div>
+                )}
+                
+                {/* Results Badge */}
+                {service.results && (
+                  <div className="mt-4 bg-blue-50 rounded-lg p-3">
+                    <div className="text-blue-700 font-semibold text-sm">
+                      Typische Ergebnisse: {service.results}
+                    </div>
                   </div>
                 )}
                 
@@ -173,40 +190,40 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Case Studies Teaser - Bentobox style */}
+        {/* Success Metrics - Bentobox style */}
         <div className="bg-white rounded-2xl p-8 shadow-lg">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-slate-800 mb-4">
-              Praxisbeispiele & Success Stories
+              Bewiesene Ergebnisse unserer KI-Automatisierung
             </h3>
             <p className="text-xl text-slate-600 mb-6">
-              Erfahren Sie, wie wir anderen Unternehmen geholfen haben, ihre Digitalisierungsziele zu erreichen.
+              Das erreichen unsere Kunden durchschnittlich in den ersten 6 Monaten
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-emerald-50 rounded-xl p-6 text-center">
+              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-emerald-600">+40%</span>
+              </div>
+              <h4 className="font-semibold text-slate-800 mb-2">Lead-Generierung</h4>
+              <p className="text-sm text-slate-600">Mehr qualifizierte Leads durch KI-Targeting</p>
+            </div>
+            
             <div className="bg-blue-50 rounded-xl p-6 text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-600">HR</span>
+                <span className="text-2xl font-bold text-blue-600">-30%</span>
               </div>
-              <h4 className="font-semibold text-slate-800 mb-2">Mitarbeiter-Onboarding</h4>
-              <p className="text-sm text-slate-600">50% schnellere Einarbeitung durch KI-gestützte Prozesse</p>
+              <h4 className="font-semibold text-slate-800 mb-2">Sales-Cycle</h4>
+              <p className="text-sm text-slate-600">Schnellere Abschlüsse durch Automatisierung</p>
             </div>
             
             <div className="bg-purple-50 rounded-xl p-6 text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-purple-600">CRM</span>
+                <span className="text-2xl font-bold text-purple-600">-50%</span>
               </div>
-              <h4 className="font-semibold text-slate-800 mb-2">Sales-Automatisierung</h4>
-              <p className="text-sm text-slate-600">300% Steigerung der Lead-Qualifikation</p>
-            </div>
-            
-            <div className="bg-emerald-50 rounded-xl p-6 text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-emerald-600">KI</span>
-              </div>
-              <h4 className="font-semibold text-slate-800 mb-2">Predictive Analytics</h4>
-              <p className="text-sm text-slate-600">Vorhersage-Genauigkeit von 95% erreicht</p>
+              <h4 className="font-semibold text-slate-800 mb-2">Admin-Aufwand</h4>
+              <p className="text-sm text-slate-600">Weniger manuelle Arbeit im HR-Bereich</p>
             </div>
           </div>
         </div>
