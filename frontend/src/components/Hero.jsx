@@ -1,8 +1,10 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { mockData } from '../mockData';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
+  const { t, language } = useLanguage();
+
   return (
     <section className="pt-16 min-h-screen bg-white overflow-hidden">
       {/* Background Elements with subtle colors */}
@@ -17,20 +19,20 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Headline */}
           <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
-            {mockData.hero.title}
+            {t.hero.title}
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-slate-600 mb-6 leading-relaxed max-w-3xl mx-auto">
-            {mockData.hero.subtitle}
+            {t.hero.subtitle}
           </p>
 
           {/* Benefits */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            {mockData.hero.benefits.map((benefit, index) => (
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 flex-wrap">
+            {t.hero.benefits.map((benefit, index) => (
               <div key={index} className="flex items-center space-x-2 bg-emerald-50 px-4 py-2 rounded-lg">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                <span className="text-emerald-700 font-medium">{benefit}</span>
+                <span className="text-emerald-700 font-medium text-sm">{benefit}</span>
               </div>
             ))}
           </div>
@@ -41,7 +43,7 @@ const Hero = () => {
               size="lg" 
               className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-              {mockData.hero.primaryCTA}
+              {t.hero.primaryCTA}
             </Button>
             
             <Button 
@@ -49,7 +51,7 @@ const Hero = () => {
               size="lg" 
               className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
             >
-              {mockData.hero.secondaryCTA}
+              {t.hero.secondaryCTA}
             </Button>
           </div>
 
@@ -57,18 +59,11 @@ const Hero = () => {
           <div className="mb-8">
             <div className="relative max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src={mockData.hero.videoPlaceholder} 
-                alt="KI-Automatisierung Office" 
+                src={t.hero.videoPlaceholder} 
+                alt={language === 'de' ? 'Strategische Beratung Team' : 'Strategic Consulting Team'} 
                 className="w-full h-64 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -76,15 +71,15 @@ const Hero = () => {
           <div className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-8 text-slate-500 text-sm">
             <div className="flex items-center space-x-2">
               <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
-              <span>Dubai, UAE</span>
+              <span>DACH • UAE • Saudi Arabia</span>
             </div>
             <div className="flex items-center space-x-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-              <span>KI-Automatisierung</span>
+              <span>{language === 'de' ? 'Strategische Beratung' : 'Strategic Consulting'}</span>
             </div>
             <div className="flex items-center space-x-2">
               <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
-              <span>10+ Jahre Erfahrung</span>
+              <span>{language === 'de' ? '10+ Jahre Erfahrung' : '10+ Years Experience'}</span>
             </div>
           </div>
         </div>
