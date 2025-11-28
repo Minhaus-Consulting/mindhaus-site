@@ -1,284 +1,751 @@
-// Mock data for MINDhaus Consulting website - Updated with client requirements
+
 export const mockData = {
-  seo: {
-    title: "Dubai Mindhaus Consulting | KI-Automatisierung Sales & Marketing",
-    description: "Automatisiere Sales, Marketing & HR mit KI. Strategie, Workshops, Umsetzung – jetzt kostenlose Potenzialanalyse sichern!"
-  },
+  de: {
+    seo: {
+      title: "Mindhaus Consulting | Strategische Beratung für Markteintritte DACH ↔ UAE & Saudi-Arabien",
+      description: "Individuelle strategische Beratung für Marktexpansion. People Business Networking, Digital Marketing und Remote Team Building für DACH, UAE und Saudi-Arabien. Mehrsprachiges Team (Deutsch, Arabisch, Türkisch, Englisch)."
+    },
 
-  hero: {
-    title: "KI-Automatisierung für Sales, Marketing & HR",
-    subtitle: "Digitale Effizienz statt manueller Routinen.",
-    benefits: [
-      "Mehr Leads & schnellere Abschlüsse",
-      "HR-Prozesse ohne Papierkram"
+    hero: {
+      title: "Strategische Beratung für Ihren individuellen Markteintritt",
+      subtitle: "Wir brechen Hürden durch People Business Networking und digital effiziente Methoden.",
+      benefits: [
+        "Individuelle Go-to-Market Strategien für DACH, UAE & Saudi-Arabien",
+        "People Business Networking & lokale Partnerschaften",
+        "Team-Unterstützung für Marketing-Eintritt & Skalierung"
+      ],
+      primaryCTA: "Kostenlose Strategieberatung anfordern",
+      secondaryCTA: "Use Cases ansehen",
+      videoPlaceholder: "/images/hero-team.jpg"
+    },
+    
+    storyBrand: {
+      hero: "Unternehmen, die in neue Märkte (DACH, UAE, Saudi-Arabien) expandieren möchten",
+      problems: [
+        "Unbekannte Marktdynamiken und kulturelle Barrieren",
+        "Fehlende lokale Netzwerke und Partnerschaften",
+        "Unklare Go-to-Market Strategien für spezifische Branchen",
+        "Schwierigkeiten beim Aufbau lokaler Teams",
+        "Ineffektive Digital Marketing Ansätze",
+        "Hohe Eintrittskosten und Risiken"
+      ],
+      solution: "Strategische Beratung mit People Business Networking und bewährten Methoden aus 10+ Jahren Erfahrung",
+      plan: [
+        { step: 1, title: "Analyse & Sensibilisierung", description: "Tiefgreifende Marktanalyse und kulturelle Sensibilisierung" },
+        { step: 2, title: "Strategie & Networking", description: "Individuelle GTM-Strategie und People Business Networking" },
+        { step: 3, title: "Umsetzung & Skalierung", description: "Team-Aufbau, Marketing-Eintritt und Marktskalierung" }
+      ],
+      failure: "Fehlgeschlagene Markteintritte, verlorene Investitionen, verpasste Chancen",
+      success: "Erfolgreiche Marktexpansion, etablierte Partnerschaften, profitable Operationen"
+    },
+
+    founder: {
+      name: "Mindhaus Consulting Team",
+      title: "Ihre strategischen Partner für individuelle Markteintritte",
+      description: "Gegründet von Experten mit über 10 Jahren Erfahrung in internationalen Märkten (DACH, UAE, Saudi-Arabien). Unser Team spezialisiert sich auf strategische Beratung für individuelle Markteintritte - von IoT-Unternehmen über SaaS bis zu traditionellen B2B-Geschäften. Wir sensibilisieren, brechen Hürden durch People Business Networking und unterstützen Ihr Team mit digital effizienten Methoden.",
+      quote: "Wir sind keine Standardlösung. Jeder Markteintritt ist individuell - wir analysieren, sensibilisieren und bauen die richtigen Brücken für Ihren Erfolg.",
+      image: "/images/team-meeting.jpg",
+      stats: {
+        experience: "10+",
+        teamMembers: "15+",
+        languages: "4"
+      }
+    },
+
+    team: {
+      title: "Unser Mehrsprachiges Team",
+      description: "15+ Experten mit Expertise in DACH, UAE und Saudi-Arabien",
+      languages: ["Deutsch", "Englisch", "Arabisch", "Türkisch"],
+      members: [
+        {
+          name: "Strategy Lead",
+          role: "Strategische Markteintritte",
+          languages: ["Deutsch", "Englisch"],
+          expertise: "Go-to-Market Strategien, Business Development"
+        },
+        {
+          name: "Market Analyst",
+          role: "Marktanalyse & Sensibilisierung",
+          languages: ["Deutsch", "Englisch", "Arabisch"],
+          expertise: "Marktdynamiken, Kulturelle Sensibilisierung"
+        },
+        {
+          name: "Networking Specialist",
+          role: "People Business Networking",
+          languages: ["Arabisch", "Englisch", "Deutsch"],
+          expertise: "Partnerschaften, Netzwerk-Aufbau"
+        },
+        {
+          name: "Digital Marketing Architect",
+          role: "Digital Marketing Strategien",
+          languages: ["Deutsch", "Englisch", "Türkisch"],
+          expertise: "Multi-Channel Marketing, Lokalisierung"
+        },
+        {
+          name: "Team Building Specialist",
+          role: "Remote Team Aufbau",
+          languages: ["Deutsch", "Englisch", "Arabisch"],
+          expertise: "Recruitment, HR Operations"
+        },
+        {
+          name: "Operations Manager",
+          role: "Operative Umsetzung",
+          languages: ["Deutsch", "Englisch", "Türkisch"],
+          expertise: "Prozessoptimierung, Skalierung"
+        }
+      ]
+    },
+
+    services: [
+      {
+        id: 1,
+        title: "Strategische Beratung für individuelle Markteintritte",
+        description: "Keine Standardlösungen - wir analysieren Ihre spezifische Situation und entwickeln die passende Strategie für Ihren Markteintritt in DACH, UAE oder Saudi-Arabien.",
+        icon: "🎯",
+        featured: true,
+        benefits: ["Individuelle Marktanalyse & Sensibilisierung", "Maßgeschneiderte GTM-Strategie", "Kulturelle & regulatorische Beratung"],
+        areas: ["Strategy", "Market Entry", "Consulting"],
+        headerImage: "/images/strategy-session.jpg",
+        results: "Erfolgreiche Markteintritte"
+      },
+      {
+        id: 2,
+        title: "People Business Networking",
+        description: "Wir brechen Hürden durch echte Beziehungen. Zugang zu unserem etablierten Netzwerk in DACH, UAE und Saudi-Arabien - von Entscheidern bis zu lokalen Partnern.",
+        icon: "🤝",
+        benefits: ["Zugang zu Entscheidern & Partnern", "Lokale Netzwerk-Events", "B2B-Matchmaking"],
+        areas: ["Networking", "Partnerships", "Business Development"],
+        headerImage: "/images/team-meeting.jpg",
+        results: "Etablierte Partnerschaften"
+      },
+      {
+        id: 3,
+        title: "Digital Marketing für Markteintritte", 
+        description: "Digital effiziente Methoden für Ihren Marketing-Eintritt. Mehrsprachige Kampagnen, lokalisierte Content-Strategien und Performance-Tracking.",
+        icon: "📊",
+        benefits: ["Multi-Language Campaigns", "Lokalisierte Content-Strategie", "Performance Analytics"],
+        areas: ["Marketing", "Digital", "Content"],
+        headerImage: "/images/office-collaboration.jpg",
+        results: "+40% Lead-Generierung"
+      },
+      {
+        id: 4,
+        title: "Team-Aufbau & Skalierungsunterstützung",
+        description: "Wir unterstützen Ihr Team beim Marketing-Eintritt und der Skalierung im Markt. Von Recruitment über Training bis zu operativer Unterstützung.",
+        icon: "👥",
+        benefits: ["Lokales Team-Recruitment", "Training & Enablement", "Operative Skalierungsunterstützung"],
+        areas: ["HR", "Team Building", "Operations"],
+        headerImage: "/images/remote-work.jpg",
+        results: "Operational in 4-6 Wochen"
+      }
     ],
-    primaryCTA: "Kostenlose Potenzialanalyse anfordern",
-    secondaryCTA: "Mehr über Methodik",
-    videoPlaceholder: "https://images.unsplash.com/photo-1718220216044-006f43e3a9b1"
-  },
-  
-  // StoryBrand Structure
-  storyBrand: {
-    hero: "Unternehmen, die Sales, Marketing und HR mit KI automatisieren wollen",
-    problems: [
-      "Zu wenig qualifizierte Leads",
-      "Sales-Cycle zu lang", 
-      "Recruiting dauert Monate",
-      "Manuelle Datenerfassung",
-      "Ineffiziente Kampagnen",
-      "Hohe Personalkosten"
+
+    useCases: [
+      {
+        id: 1,
+        title: "IoT-Unternehmen: Deutschland → Saudi-Arabien",
+        industry: "IoT / Industrial Tech",
+        challenge: "Deutsches IoT-Unternehmen möchte in Saudi-Arabien eintreten. Unbekannte Marktdynamiken, fehlende Kontakte, unklare Digital Marketing Ansätze.",
+        solution: "Marktanalyse, Sensibilisierung für lokale Besonderheiten, People Business Networking mit Entscheidern, Digital Marketing Strategie, Team-Aufbau vor Ort.",
+        results: [
+          "Partnerschaften mit 3 lokalen Distributoren etabliert",
+          "Erstes lokales Team von 4 Mitarbeitern aufgebaut",
+          "Digital Marketing Kampagne mit +60% Lead-Generierung",
+          "Erste Pilotprojekte mit saudi-arabischen Unternehmen"
+        ],
+        testimonial: "Mindhaus hat uns nicht nur beraten, sondern echte Türen geöffnet durch ihr Netzwerk.",
+        author: "CEO, deutsches IoT-Unternehmen"
+      },
+      {
+        id: 2,
+        title: "SaaS-Startup: UAE → DACH",
+        industry: "B2B SaaS",
+        challenge: "UAE-basiertes SaaS-Startup möchte in den DACH-Markt expandieren. Kulturelle Unterschiede, unbekannte Vertriebskanäle, Sprachbarrieren.",
+        solution: "Go-to-Market Strategie für DACH, lokalisierte Marketing-Kampagnen, Aufbau eines deutschen Vertriebsteams, Partnerschaften mit lokalen Resellern.",
+        results: [
+          "Erfolgreicher Markteintritt in Deutschland",
+          "10+ qualifizierte Leads in den ersten 3 Monaten",
+          "Lokales Team von 3 Sales-Mitarbeitern",
+          "Partnerschaften mit 2 deutschen Resellern"
+        ],
+        testimonial: "Die kulturelle Sensibilisierung und das Netzwerk waren entscheidend für unseren Erfolg.",
+        author: "Founder, UAE SaaS-Startup"
+      },
+      {
+        id: 3,
+        title: "E-Commerce: DACH → UAE",
+        industry: "E-Commerce / Retail",
+        challenge: "Deutsches E-Commerce Unternehmen möchte in UAE expandieren. Unbekannte E-Commerce-Landschaft, Logistik-Herausforderungen, Payment-Lösungen.",
+        solution: "Marktanalyse E-Commerce UAE, Partnerschaften mit Logistik-Providern, Payment-Integration, Digital Marketing für UAE-Markt.",
+        results: [
+          "Erfolgreicher Launch in UAE",
+          "Partnerschaften mit lokalen Logistik-Anbietern",
+          "Payment-Integration für lokale Zahlungsmethoden",
+          "+45% Umsatz in den ersten 6 Monaten"
+        ],
+        testimonial: "Ohne Mindhaus hätten wir Monate verloren. Ihr Netzwerk hat uns Zeit und Geld gespart.",
+        author: "Geschäftsführer, deutsches E-Commerce Unternehmen"
+      }
     ],
-    solution: "KI-Automatisierung mit bewährten Tools und Workshops aus Dubai",
-    plan: [
-      { step: 1, title: "Analyse", description: "Kostenlose Potenzialanalyse Ihrer Prozesse" },
-      { step: 2, title: "Pilot-Use-Case", description: "Erste KI-Automatisierung implementieren" },
-      { step: 3, title: "Rollout & Optimierung", description: "Skalierung und kontinuierliche Verbesserung" }
+
+    painPoints: [
+      {
+        problem: "Unbekannte Marktdynamiken in Zielregion",
+        solution: "Tiefgreifende Marktanalyse & kulturelle Sensibilisierung"
+      },
+      {
+        problem: "Fehlende lokale Kontakte und Partnerschaften",
+        solution: "People Business Networking & Zugang zu Entscheidern"
+      },
+      {
+        problem: "Unklare Go-to-Market Strategie für spezifische Branche",
+        solution: "Individuelle strategische Beratung (keine Standardlösungen)"
+      },
+      {
+        problem: "Schwierigkeiten beim Aufbau lokaler Teams",
+        solution: "End-to-End Team-Aufbau & operative Unterstützung"
+      },
+      {
+        problem: "Ineffektive Digital Marketing Ansätze",
+        solution: "Lokalisierte Multi-Channel Marketing Strategien"
+      },
+      {
+        problem: "Hohe Eintrittskosten und Risiken",
+        solution: "Risikominimierung durch bewährte Methoden & Netzwerk"
+      }
     ],
-    failure: "Verpasste Leads, lange Sales-Zyklen, hohe Recruiting-Kosten",
-    success: "+40% Lead-Generierung, -30% Sales-Cycle-Zeit, -50% Admin-Aufwand"
-  },
 
-  founder: {
-    name: "Marwa Toprak",
-    title: "Gründerin & CEO",
-    description: "Mit über 10 Jahren Erfahrung in Logistik, HR und IT bei internationalen Unternehmen wie Dachser und DSV Road GmbH spezialisiere ich mich auf KI-Automatisierung für Sales, Marketing und HR. Mein Fokus liegt auf messbaren Ergebnissen und nachhaltiger Prozessoptimierung.",
-    quote: "Dubai als Innovation-Hub – Zugang zu den neuesten KI-Tools und globalen Experten.",
-    image: "https://images.pexels.com/photos/8353820/pexels-photo-8353820.jpeg",
-    stats: {
-      experience: "10+",
-      projects: "50+",
-      success: "320%"
-    }
-  },
-
-  services: [
-    {
-      id: 1,
-      title: "Online-Marketing-Strategie",
-      description: "Wir entwickeln kanalübergreifende Kampagnen, die deine Zielgruppen treffen und Leads in Umsatz verwandeln.",
-      icon: "📊",
-      featured: true,
-      benefits: ["Datengetriebene Buyer-Journey", "Full-Funnel-Tracking", "+40 % Lead-Generierung"],
-      areas: ["Marketing", "Sales", "Analytics"],
-      headerImage: "https://images.pexels.com/photos/7709197/pexels-photo-7709197.jpeg",
-      results: "+40% Lead-Generierung"
-    },
-    {
-      id: 2,
-      title: "KI-Automatisierung für Sales & Marketing",
-      description: "Schrittweise Automatisierung von Akquise, Lead-Nurturing und Reporting mit generativer KI.",
-      icon: "🤖",
-      benefits: ["AI-gestützte Outreach-Sequenzen", "Predictive Lead Scoring", "-30 % Sales-Cycle-Zeit"],
-      areas: ["Sales", "Marketing", "AI"],
-      headerImage: "https://images.unsplash.com/photo-1551135049-8a33b5883817",
-      results: "-30% Sales-Cycle-Zeit"
-    },
-    {
-      id: 3,
-      title: "HR-Automation & Talent Management", 
-      description: "Von Recruiting-Bots bis Onboarding-Workflows: Wir senken Time-to-Hire und erhöhen Mitarbeiterbindung.",
-      icon: "👥",
-      benefits: ["KI-gestütztes CV-Screening", "Self-Service-Portale", "-50 % Admin-Aufwand"],
-      areas: ["HR", "Recruiting", "Automation"],
-      headerImage: "https://images.unsplash.com/photo-1650784854790-fb6c2ed400d3",
-      results: "-50% Admin-Aufwand"
-    },
-    {
-      id: 4,
-      title: "Tool-Selection, Workshops & Umsetzung",
-      description: "Wir identifizieren passende SaaS-Tools, befähigen dein Team und setzen Projekte mit Spezialist*innen um.",
-      icon: "🛠️",
-      benefits: ["Markt- & Tech-Research", "Hands-on-Workshops", "Dedizierte Expertenteams"],
-      areas: ["Tools", "Training", "Implementation"],
-      headerImage: "https://images.pexels.com/photos/8127697/pexels-photo-8127697.jpeg",
-      results: "Schnelle Umsetzung"
-    }
-  ],
-
-  painPoints: [
-    {
-      problem: "Zu wenig qualifizierte Leads",
-      solution: "KI-Targeting & automatisierte Kampagnen starten"
-    },
-    {
-      problem: "Sales-Cycle zu lang", 
-      solution: "Predictive Scoring & Next-Best-Action einführen"
-    },
-    {
-      problem: "Recruiting dauert Monate",
-      solution: "AI-Screening & automatisiertes Onboarding implementieren"
-    },
-    {
-      problem: "Manuelle Datenerfassung",
-      solution: "Intelligente Formulare & automatische Datenverarbeitung"
-    },
-    {
-      problem: "Ineffiziente Kampagnen",
-      solution: "KI-optimierte Zielgruppenansprache & Performance-Tracking"
-    },
-    {
-      problem: "Hohe Personalkosten",
-      solution: "Automatisierte Workflows & Self-Service-Portale einführen"
-    }
-  ],
-
-  whyMindhaus: [
-    {
-      title: "Kosteneffizientes Arbeiten",
-      description: "Transparente Preismodelle ohne versteckte Kosten",
-      icon: "💰"
-    },
-    {
-      title: "Transparentes Projektmanagement",
-      description: "Echtzeitabrechnungen und vollständige Kostenkontrolle",
-      icon: "📊"
-    },
-    {
-      title: "Flexible Zahlungsoptionen",
-      description: "Zahlung in Dirham, US-Dollar, Euro und Kryptowährungen möglich",
-      icon: "💳"
-    },
-    {
-      title: "Weltweit abrufbares Team",
-      description: "Experten für Groß- und kleine Digitalisierungsprojekte verfügbar",
-      icon: "🌍"
-    },
-    {
-      title: "Dubai Innovation Hub",
-      description: "Zugang zu neuesten Technologien und globalen Partnerschaften",
-      icon: "🚀"
-    },
-    {
-      title: "Praxiserprobte Methoden",
-      description: "Bewährte Frameworks aus 10+ Jahren Beratungserfahrung",
-      icon: "✅"
-    }
-  ],
-
-  caseStudy: {
-    title: "B2B-Software: 320% Marketing-ROI Steigerung",
-    description: "Ein B2B-Softwareanbieter generierte kaum planbare Leads und verlor Top-Talente im Recruiting-Prozess. Wir implementierten KI-gestützte LinkedIn-Kampagnen, automatisierten Lead-Scoring im CRM und rollten einen Chatbot fürs Bewerber-Screening aus.",
-    results: [
-      "Marketing-ROI stieg um 320%",
-      "Time-to-Hire sank von 45 auf 20 Tage",
-      "Pipeline-Qualität verbesserte sich erheblich"
+    whyMindhaus: [
+      {
+        title: "Individuelle strategische Beratung",
+        description: "Keine Standardlösungen - jeder Markteintritt ist einzigartig",
+        icon: "🎯"
+      },
+      {
+        title: "People Business Networking",
+        description: "Echte Beziehungen zu Entscheidern und lokalen Partnern",
+        icon: "🤝"
+      },
+      {
+        title: "Mehrsprachiges Expertise",
+        description: "Team spricht Deutsch, Arabisch, Türkisch und Englisch fließend",
+        icon: "🌍"
+      },
+      {
+        title: "Tri-Market Expertise",
+        description: "10+ Jahre Erfahrung in DACH, UAE und Saudi-Arabien",
+        icon: "📍"
+      },
+      {
+        title: "Digital effiziente Methoden",
+        description: "Moderne Tools und Prozesse für schnelle Markteintritte",
+        icon: "⚡"
+      },
+      {
+        title: "Team-Unterstützung",
+        description: "Wir unterstützen Ihr Team beim Marketing-Eintritt & Skalierung",
+        icon: "💼"
+      }
     ],
-    testimonial: "Mindhaus hat unsere Pipeline explodieren lassen und gleichzeitig HR entlastet.",
-    author: "CMO, SoftTech GmbH"
+
+    caseStudy: {
+      title: "IoT-Unternehmen: Erfolgreicher Eintritt in Saudi-Arabien",
+      description: "Ein deutsches IoT-Unternehmen wollte in den saudi-arabischen Markt expandieren. Wir führten eine tiefgreifende Marktanalyse durch, sensibilisierten das Team für lokale Besonderheiten, öffneten Türen durch unser People Business Networking und unterstützten beim Aufbau eines lokalen Teams. Innerhalb von 6 Monaten: Erste Partnerschaften etabliert, lokales Team operational, erste Pilotprojekte gestartet.",
+      results: [
+        "Partnerschaften mit 3 lokalen Distributoren",
+        "Lokales Team von 4 Mitarbeitern aufgebaut",
+        "+60% Lead-Generierung durch Digital Marketing",
+        "Erste Pilotprojekte mit saudi-arabischen Unternehmen"
+      ],
+      testimonial: "Mindhaus hat uns nicht nur beraten, sondern echte Türen geöffnet. Ihr Netzwerk und ihre Sensibilisierung waren entscheidend.",
+      author: "CEO, deutsches IoT-Unternehmen"
+    },
+
+    faq: [
+      {
+        question: "Was unterscheidet Ihre Beratung von anderen?",
+        answer: "Wir bieten keine Standardlösungen. Jeder Markteintritt ist individuell - wir analysieren Ihre spezifische Situation und entwickeln die passende Strategie. Unser People Business Networking öffnet echte Türen."
+      },
+      {
+        question: "Welche Märkte deckt ihr ab?",
+        answer: "Wir spezialisieren uns auf DACH (Deutschland, Österreich, Schweiz), UAE (Dubai, Abu Dhabi) und Saudi-Arabien. Unser Team kennt alle drei Märkte aus jahrelanger Erfahrung."
+      },
+      {
+        question: "Wie funktioniert People Business Networking?",
+        answer: "Wir öffnen Türen zu Entscheidern, lokalen Partnern und relevanten Netzwerken. Durch etablierte Beziehungen verkürzen wir Ihre Time-to-Market erheblich."
+      },
+      {
+        question: "Welche Sprachen spricht Ihr Team?",
+        answer: "Unser Team spricht fließend Deutsch, Arabisch, Türkisch und Englisch. Wir können in allen Sprachen beraten und umsetzen."
+      },
+      {
+        question: "Wie lange dauert ein typischer Markteintritt?",
+        answer: "Analyse & Strategie: 4-8 Wochen. Networking & Partnerschaften: 8-12 Wochen. Team-Aufbau: 6-12 Wochen. Erste Umsätze: 3-6 Monate. Abhängig von Ihrer Branche und Zielen."
+      },
+      {
+        question: "Arbeitet ihr auch mit kleineren Unternehmen?",
+        answer: "Ja, wir haben skalierbare Lösungen für Startups bis zu etablierten Konzernen. Jeder Markteintritt verdient individuelle Beratung."
+      }
+    ],
+
+    secondaryCTA: "Lassen Sie uns gemeinsam Ihre individuelle Strategie entwickeln - mit People Business Networking und bewährten Methoden.",
+
+    testimonials: [
+      {
+        id: 1,
+        text: "Mindhaus hat uns nicht nur beraten, sondern echte Türen geöffnet durch ihr Netzwerk. Die Sensibilisierung für den saudi-arabischen Markt war entscheidend.",
+        author: "CEO",
+        company: "Deutsches IoT-Unternehmen",
+        rating: 5,
+        image: "/images/hero-team.jpg"
+      },
+      {
+        id: 2, 
+        text: "Endlich jemand, der beide Märkte wirklich versteht. Keine Standardlösungen, sondern echte strategische Beratung.",
+        author: "Founder",
+        company: "UAE Tech Startup",
+        rating: 5,
+        image: "/images/team-meeting.jpg"
+      },
+      {
+        id: 3,
+        text: "Das People Business Networking hat uns Monate an Zeit gespart. Partnerschaften, die sonst Jahre gedauert hätten.",
+        author: "Managing Director",
+        company: "Deutsches Logistik-Unternehmen", 
+        rating: 5,
+        image: "/images/strategy-session.jpg"
+      },
+      {
+        id: 4,
+        text: "Die kulturelle Sensibilisierung und das mehrsprachige Team waren game-changing für unseren Markteintritt.",
+        author: "COO",
+        company: "UAE B2B-Unternehmen",
+        rating: 5,
+        image: "/images/office-collaboration.jpg"
+      },
+      {
+        id: 5,
+        text: "Von der Analyse bis zur Umsetzung - Mindhaus hat unser Team perfekt unterstützt. Professionell und zuverlässig.",
+        author: "Geschäftsführer",
+        company: "Deutsches E-Commerce Unternehmen",
+        rating: 5,
+        image: "/images/remote-work.jpg"
+      },
+      {
+        id: 6,
+        text: "Individuelle Beratung statt Standardlösungen - genau das haben wir gebraucht für unseren Markteintritt.",
+        author: "CEO",
+        company: "Deutsches SaaS-Unternehmen",
+        rating: 5,
+        image: "/images/hero-team.jpg"
+      }
+    ],
+
+    contact: {
+      email: "info@mindhaus-consulting.ae",
+      emailSecondary: "info@mindhaus-consulting.com",
+      phone: "+971 50 123 4567",
+      address: "RAKEZ, VAE"
+    },
+
+    officeImages: [
+      "/images/hero-team.jpg",
+      "/images/team-meeting.jpg",
+      "/images/strategy-session.jpg",
+      "/images/office-collaboration.jpg"
+    ],
+
+    clientLogos: [
+      "Dachser Group", 
+      "DSV Road GmbH",
+      "SoftTech GmbH",
+      "Deutsche Telekom",
+      "Dubai Tech Hub",
+      "Global Logistics Corp"
+    ],
+
+    company: {
+      name: "Mindhaus Consulting FZ-LLC",
+      location: "RAKEZ, VAE",
+      fullName: "Mindhaus Consulting FZ-LLC | RAKEZ, VAE"
+    },
+
+    keywords: "Strategische Beratung, Markteintritt, DACH UAE Saudi-Arabien, People Business Networking, Go-to-Market Strategie, Digital Marketing, Team-Aufbau, Marktexpansion, Mehrsprachige Beratung"
   },
 
-  faq: [
-    {
-      question: "Wie läuft ein KI-Automatisierungsprojekt ab?",
-      answer: "Analyse, Pilot-Use-Case, Rollout und kontinuierliches Optimieren – transparent in 4 Phasen."
+  en: {
+    seo: {
+      title: "Mindhaus Consulting | Strategic Consulting for Market Entry DACH ↔ UAE & Saudi Arabia",
+      description: "Individual strategic consulting for market expansion. People Business Networking, Digital Marketing and Remote Team Building for DACH, UAE and Saudi Arabia. Multilingual team (German, Arabic, Turkish, English)."
     },
-    {
-      question: "Welches Budget sollte ich einplanen?",
-      answer: "Kick-off-Projekte starten ab 15.000 €. Danach Festpreis pro Modul oder Retainer möglich."
-    },
-    {
-      question: "Muss mein Team programmieren können?",
-      answer: "Nein. Wir wählen No-/Low-Code-Tools und schulen dein Team in praxisnahen Workshops."
-    },
-    {
-      question: "Wie schnell sehen wir erste Ergebnisse?",
-      answer: "Die ersten automatisierten Prozesse sind meist nach 2-4 Wochen live. Messbare ROI-Verbesserungen zeigen sich typischerweise nach 8-12 Wochen."
-    },
-    {
-      question: "Arbeiten Sie auch mit kleineren Unternehmen?",
-      answer: "Ja, wir haben skalierbare Lösungen für Unternehmen jeder Größe – von Startups bis zu Konzernen."
-    },
-    {
-      question: "Welche Tools und Plattformen nutzen Sie?",
-      answer: "Wir sind technologie-agnostisch und wählen die besten Tools für Ihren Use Case – von HubSpot über Zapier bis zu maßgeschneiderten KI-Lösungen."
-    }
-  ],
 
-  secondaryCTA: "Heb dein Wachstumspotenzial jetzt – sichere dir ein Erstgespräch und starte deine KI-Roadmap heute!",
-
-  testimonials: [
-    {
-      id: 1,
-      text: "Mindhaus hat unsere Pipeline explodieren lassen und gleichzeitig HR entlastet. Der ROI war nach 6 Monaten bereits bei 320%.",
-      author: "CMO",
-      company: "SoftTech GmbH",
-      rating: 5,
-      image: "https://images.pexels.com/photos/8353820/pexels-photo-8353820.jpeg"
+    hero: {
+      title: "Strategic Consulting for Your Individual Market Entry",
+      subtitle: "We break barriers through People Business Networking and digitally efficient methods.",
+      benefits: [
+        "Individual Go-to-Market Strategies for DACH, UAE & Saudi Arabia",
+        "People Business Networking & local partnerships",
+        "Team support for market entry & scaling"
+      ],
+      primaryCTA: "Request Free Strategy Consultation",
+      secondaryCTA: "View Use Cases",
+      videoPlaceholder: "/images/hero-team.jpg"
     },
-    {
-      id: 2, 
-      text: "Die KI-Automatisierung hat unsere Lead-Qualität drastisch verbessert. Endlich können wir skalieren ohne mehr Personal.",
-      author: "Head of Sales",
-      company: "Dachser Group",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1551135049-8a33b5883817"
+    
+    storyBrand: {
+      hero: "Companies expanding into new markets (DACH, UAE, Saudi Arabia)",
+      problems: [
+        "Unknown market dynamics and cultural barriers",
+        "Missing local networks and partnerships",
+        "Unclear Go-to-Market strategies for specific industries",
+        "Difficulties building local teams",
+        "Ineffective Digital Marketing approaches",
+        "High entry costs and risks"
+      ],
+      solution: "Strategic consulting with People Business Networking and proven methods from 10+ years of experience",
+      plan: [
+        { step: 1, title: "Analysis & Sensitization", description: "In-depth market analysis and cultural sensitization" },
+        { step: 2, title: "Strategy & Networking", description: "Individual GTM strategy and People Business Networking" },
+        { step: 3, title: "Implementation & Scaling", description: "Team building, market entry and scaling" }
+      ],
+      failure: "Failed market entries, lost investments, missed opportunities",
+      success: "Successful market expansion, established partnerships, profitable operations"
     },
-    {
-      id: 3,
-      text: "Von 45 Tagen auf 20 Tage Time-to-Hire – das KI-Screening ist ein Gamechanger für unser Recruiting.",
-      author: "HR Director",
-      company: "DSV Road GmbH", 
-      rating: 5,
-      image: "https://images.pexels.com/photos/7709197/pexels-photo-7709197.jpeg"
+
+    founder: {
+      name: "Mindhaus Consulting Team",
+      title: "Your strategic partners for individual market entries",
+      description: "Founded by experts with over 10 years of experience in international markets (DACH, UAE, Saudi Arabia). Our team specializes in strategic consulting for individual market entries - from IoT companies to SaaS to traditional B2B businesses. We sensitize, break barriers through People Business Networking and support your team with digitally efficient methods.",
+      quote: "We are not a standard solution. Every market entry is individual - we analyze, sensitize and build the right bridges for your success.",
+      image: "/images/team-meeting.jpg",
+      stats: {
+        experience: "10+",
+        teamMembers: "15+",
+        languages: "4"
+      }
     },
-    {
-      id: 4,
-      text: "Die transparente Projektabrechnung und flexible Zahlungsoptionen haben uns überzeugt. Professionell von A bis Z.",
-      author: "CFO",
-      company: "Deutsche Telekom",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1650784854790-fb6c2ed400d3"
+
+    team: {
+      title: "Our Multilingual Team",
+      description: "15+ experts with expertise in DACH, UAE and Saudi Arabia",
+      languages: ["German", "English", "Arabic", "Turkish"],
+      members: [
+        {
+          name: "Strategy Lead",
+          role: "Strategic Market Entries",
+          languages: ["German", "English"],
+          expertise: "Go-to-Market Strategies, Business Development"
+        },
+        {
+          name: "Market Analyst",
+          role: "Market Analysis & Sensitization",
+          languages: ["German", "English", "Arabic"],
+          expertise: "Market Dynamics, Cultural Sensitization"
+        },
+        {
+          name: "Networking Specialist",
+          role: "People Business Networking",
+          languages: ["Arabic", "English", "German"],
+          expertise: "Partnerships, Network Building"
+        },
+        {
+          name: "Digital Marketing Architect",
+          role: "Digital Marketing Strategies",
+          languages: ["German", "English", "Turkish"],
+          expertise: "Multi-Channel Marketing, Localization"
+        },
+        {
+          name: "Team Building Specialist",
+          role: "Remote Team Building",
+          languages: ["German", "English", "Arabic"],
+          expertise: "Recruitment, HR Operations"
+        },
+        {
+          name: "Operations Manager",
+          role: "Operational Implementation",
+          languages: ["German", "English", "Turkish"],
+          expertise: "Process Optimization, Scaling"
+        }
+      ]
     },
-    {
-      id: 5,
-      text: "Automatisierte Workflows haben uns 50% Admin-Aufwand gespart. Das Team kann sich endlich auf strategische Aufgaben fokussieren.",
-      author: "Operations Manager",
-      company: "Dubai Tech Hub",
-      rating: 5,
-      image: "https://images.pexels.com/photos/8127697/pexels-photo-8127697.jpeg"
+
+    services: [
+      {
+        id: 1,
+        title: "Strategic Consulting for Individual Market Entries",
+        description: "No standard solutions - we analyze your specific situation and develop the right strategy for your market entry into DACH, UAE or Saudi Arabia.",
+        icon: "🎯",
+        featured: true,
+        benefits: ["Individual market analysis & sensitization", "Tailored GTM strategy", "Cultural & regulatory consulting"],
+        areas: ["Strategy", "Market Entry", "Consulting"],
+        headerImage: "/images/strategy-session.jpg",
+        results: "Successful market entries"
+      },
+      {
+        id: 2,
+        title: "People Business Networking",
+        description: "We break barriers through real relationships. Access to our established network in DACH, UAE and Saudi Arabia - from decision-makers to local partners.",
+        icon: "🤝",
+        benefits: ["Access to decision-makers & partners", "Local networking events", "B2B matchmaking"],
+        areas: ["Networking", "Partnerships", "Business Development"],
+        headerImage: "/images/team-meeting.jpg",
+        results: "Established partnerships"
+      },
+      {
+        id: 3,
+        title: "Digital Marketing for Market Entries", 
+        description: "Digitally efficient methods for your market entry. Multilingual campaigns, localized content strategies and performance tracking.",
+        icon: "📊",
+        benefits: ["Multi-language campaigns", "Localized content strategy", "Performance analytics"],
+        areas: ["Marketing", "Digital", "Content"],
+        headerImage: "/images/office-collaboration.jpg",
+        results: "+40% lead generation"
+      },
+      {
+        id: 4,
+        title: "Team Building & Scaling Support",
+        description: "We support your team in market entry and scaling. From recruitment to training to operational support.",
+        icon: "👥",
+        benefits: ["Local team recruitment", "Training & enablement", "Operational scaling support"],
+        areas: ["HR", "Team Building", "Operations"],
+        headerImage: "/images/remote-work.jpg",
+        results: "Operational in 4-6 weeks"
+      }
+    ],
+
+    useCases: [
+      {
+        id: 1,
+        title: "IoT Company: Germany → Saudi Arabia",
+        industry: "IoT / Industrial Tech",
+        challenge: "German IoT company wants to enter Saudi Arabia. Unknown market dynamics, missing contacts, unclear digital marketing approaches.",
+        solution: "Market analysis, sensitization for local specifics, People Business Networking with decision-makers, digital marketing strategy, local team building.",
+        results: [
+          "Partnerships with 3 local distributors established",
+          "First local team of 4 employees built",
+          "Digital marketing campaign with +60% lead generation",
+          "First pilot projects with Saudi companies"
+        ],
+        testimonial: "Mindhaus didn't just advise us, they opened real doors through their network.",
+        author: "CEO, German IoT Company"
+      },
+      {
+        id: 2,
+        title: "SaaS Startup: UAE → DACH",
+        industry: "B2B SaaS",
+        challenge: "UAE-based SaaS startup wants to expand into DACH market. Cultural differences, unknown sales channels, language barriers.",
+        solution: "Go-to-Market strategy for DACH, localized marketing campaigns, building a German sales team, partnerships with local resellers.",
+        results: [
+          "Successful market entry in Germany",
+          "10+ qualified leads in first 3 months",
+          "Local team of 3 sales employees",
+          "Partnerships with 2 German resellers"
+        ],
+        testimonial: "The cultural sensitization and network were crucial for our success.",
+        author: "Founder, UAE SaaS Startup"
+      },
+      {
+        id: 3,
+        title: "E-Commerce: DACH → UAE",
+        industry: "E-Commerce / Retail",
+        challenge: "German e-commerce company wants to expand to UAE. Unknown e-commerce landscape, logistics challenges, payment solutions.",
+        solution: "E-commerce market analysis UAE, partnerships with logistics providers, payment integration, digital marketing for UAE market.",
+        results: [
+          "Successful launch in UAE",
+          "Partnerships with local logistics providers",
+          "Payment integration for local payment methods",
+          "+45% revenue in first 6 months"
+        ],
+        testimonial: "Without Mindhaus we would have lost months. Their network saved us time and money.",
+        author: "Managing Director, German E-Commerce Company"
+      }
+    ],
+
+    painPoints: [
+      {
+        problem: "Unknown market dynamics in target region",
+        solution: "In-depth market analysis & cultural sensitization"
+      },
+      {
+        problem: "Missing local contacts and partnerships",
+        solution: "People Business Networking & access to decision-makers"
+      },
+      {
+        problem: "Unclear Go-to-Market strategy for specific industry",
+        solution: "Individual strategic consulting (no standard solutions)"
+      },
+      {
+        problem: "Difficulties building local teams",
+        solution: "End-to-end team building & operational support"
+      },
+      {
+        problem: "Ineffective digital marketing approaches",
+        solution: "Localized multi-channel marketing strategies"
+      },
+      {
+        problem: "High entry costs and risks",
+        solution: "Risk minimization through proven methods & network"
+      }
+    ],
+
+    whyMindhaus: [
+      {
+        title: "Individual Strategic Consulting",
+        description: "No standard solutions - every market entry is unique",
+        icon: "🎯"
+      },
+      {
+        title: "People Business Networking",
+        description: "Real relationships with decision-makers and local partners",
+        icon: "🤝"
+      },
+      {
+        title: "Multilingual Expertise",
+        description: "Team speaks German, Arabic, Turkish and English fluently",
+        icon: "🌍"
+      },
+      {
+        title: "Tri-Market Expertise",
+        description: "10+ years of experience in DACH, UAE and Saudi Arabia",
+        icon: "📍"
+      },
+      {
+        title: "Digitally Efficient Methods",
+        description: "Modern tools and processes for fast market entries",
+        icon: "⚡"
+      },
+      {
+        title: "Team Support",
+        description: "We support your team in market entry & scaling",
+        icon: "💼"
+      }
+    ],
+
+    caseStudy: {
+      title: "IoT Company: Successful Entry into Saudi Arabia",
+      description: "A German IoT company wanted to expand into the Saudi Arabian market. We conducted an in-depth market analysis, sensitized the team to local specifics, opened doors through our People Business Networking and supported in building a local team. Within 6 months: First partnerships established, local team operational, first pilot projects started.",
+      results: [
+        "Partnerships with 3 local distributors",
+        "Local team of 4 employees built",
+        "+60% lead generation through digital marketing",
+        "First pilot projects with Saudi companies"
+      ],
+      testimonial: "Mindhaus didn't just advise us, they opened real doors. Their network and sensitization were crucial.",
+      author: "CEO, German IoT Company"
     },
-    {
-      id: 6,
-      text: "Die Kombination aus Dubai-Innovation und deutscher Gründlichkeit ist perfekt für unsere internationalen Projekte.",
-      author: "Managing Director",
-      company: "Global Logistics Corp",
-      rating: 5,
-      image: "https://images.pexels.com/photos/8349428/pexels-photo-8349428.jpeg"
-    }
-  ],
 
-  contact: {
-    email: "info@mindhaus-consulting.ae",
-    emailSecondary: "info@mindhaus-consulting.com",
-    phone: "+971 50 123 4567",
-    address: "RAKEZ, VAE"
-  },
+    faq: [
+      {
+        question: "What distinguishes your consulting from others?",
+        answer: "We don't offer standard solutions. Every market entry is individual - we analyze your specific situation and develop the right strategy. Our People Business Networking opens real doors."
+      },
+      {
+        question: "Which markets do you cover?",
+        answer: "We specialize in DACH (Germany, Austria, Switzerland), UAE (Dubai, Abu Dhabi) and Saudi Arabia. Our team knows all three markets from years of experience."
+      },
+      {
+        question: "How does People Business Networking work?",
+        answer: "We open doors to decision-makers, local partners and relevant networks. Through established relationships we significantly shorten your time-to-market."
+      },
+      {
+        question: "Which languages does your team speak?",
+        answer: "Our team speaks German, Arabic, Turkish and English fluently. We can consult and implement in all languages."
+      },
+      {
+        question: "How long does a typical market entry take?",
+        answer: "Analysis & strategy: 4-8 weeks. Networking & partnerships: 8-12 weeks. Team building: 6-12 weeks. First revenues: 3-6 months. Depending on your industry and goals."
+      },
+      {
+        question: "Do you also work with smaller companies?",
+        answer: "Yes, we have scalable solutions for startups to established corporations. Every market entry deserves individual consulting."
+      }
+    ],
 
-  // Office and team placeholders
-  officeImages: [
-    "https://images.pexels.com/photos/8353820/pexels-photo-8353820.jpeg",
-    "https://images.unsplash.com/photo-1551135049-8a33b5883817",
-    "https://images.pexels.com/photos/7709197/pexels-photo-7709197.jpeg",
-    "https://images.unsplash.com/photo-1650784854790-fb6c2ed400d3"
-  ],
+    secondaryCTA: "Let's develop your individual strategy together - with People Business Networking and proven methods.",
 
-  // Trust signals - Real company logos
-  clientLogos: [
-    "Dachser Group", 
-    "DSV Road GmbH",
-    "SoftTech GmbH",
-    "Deutsche Telekom",
-    "Dubai Tech Hub",
-    "Global Logistics Corp"
-  ],
+    testimonials: [
+      {
+        id: 1,
+        text: "Mindhaus didn't just advise us, they opened real doors through their network. The sensitization for the Saudi market was crucial.",
+        author: "CEO",
+        company: "German IoT Company",
+        rating: 5,
+        image: "/images/hero-team.jpg"
+      },
+      {
+        id: 2, 
+        text: "Finally someone who really understands both markets. No standard solutions, but real strategic consulting.",
+        author: "Founder",
+        company: "UAE Tech Startup",
+        rating: 5,
+        image: "/images/team-meeting.jpg"
+      },
+      {
+        id: 3,
+        text: "The People Business Networking saved us months. Partnerships that would have otherwise taken years.",
+        author: "Managing Director",
+        company: "German Logistics Company", 
+        rating: 5,
+        image: "/images/strategy-session.jpg"
+      },
+      {
+        id: 4,
+        text: "The cultural sensitization and multilingual team were game-changing for our market entry.",
+        author: "COO",
+        company: "UAE B2B Company",
+        rating: 5,
+        image: "/images/office-collaboration.jpg"
+      },
+      {
+        id: 5,
+        text: "From analysis to implementation - Mindhaus supported our team perfectly. Professional and reliable.",
+        author: "Managing Director",
+        company: "German E-Commerce Company",
+        rating: 5,
+        image: "/images/remote-work.jpg"
+      },
+      {
+        id: 6,
+        text: "Individual consulting instead of standard solutions - exactly what we needed for our market entry.",
+        author: "CEO",
+        company: "German SaaS Company",
+        rating: 5,
+        image: "/images/hero-team.jpg"
+      }
+    ],
 
-  // Company info
-  company: {
-    name: "Mindhaus Consulting FZ-LLC",
-    location: "RAKEZ, VAE",
-    fullName: "Mindhaus Consulting FZ-LLC | RAKEZ, VAE"
-  },
+    contact: {
+      email: "info@mindhaus-consulting.ae",
+      emailSecondary: "info@mindhaus-consulting.com",
+      phone: "+971 50 123 4567",
+      address: "RAKEZ, UAE"
+    },
 
-  // Keywords for SEO
-  keywords: "IT-Consulting, Automatisierung, Digitale Strategie, Online-Marketing Agentur, Lead-Generierung, KI-Automatisierung, Predictive Scoring, Talent Management, SaaS-Tools, CRM-Integration"
+    officeImages: [
+      "/images/hero-team.jpg",
+      "/images/team-meeting.jpg",
+      "/images/strategy-session.jpg",
+      "/images/office-collaboration.jpg"
+    ],
+
+    clientLogos: [
+      "Dachser Group", 
+      "DSV Road GmbH",
+      "SoftTech GmbH",
+      "Deutsche Telekom",
+      "Dubai Tech Hub",
+      "Global Logistics Corp"
+    ],
+
+    company: {
+      name: "Mindhaus Consulting FZ-LLC",
+      location: "RAKEZ, UAE",
+      fullName: "Mindhaus Consulting FZ-LLC | RAKEZ, UAE"
+    },
+
+    keywords: "Strategic Consulting, Market Entry, DACH UAE Saudi Arabia, People Business Networking, Go-to-Market Strategy, Digital Marketing, Team Building, Market Expansion, Multilingual Consulting"
+  }
 };
+
+// Default export for backwards compatibility
+export default mockData.de;

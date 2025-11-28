@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { LanguageProvider } from './contexts/LanguageContext';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import PainPoints from './components/PainPoints';
@@ -16,43 +17,45 @@ import { Toaster } from './components/ui/toaster';
 
 function App() {
   return (
-    <div className="App">
-      <Navigation />
-      <main>
-        <section id="hero">
-          <Hero />
-        </section>
-        <section id="painpoints">
-          <PainPoints />
-        </section>
-        <section id="about">
-          <About />
-        </section>
-        <section id="whymindhaus">
-          <WhyMindhaus />
-        </section>
-        <section id="methodology">
-          <Methodology />
-        </section>
-        <section id="services">
-          <Services />
-        </section>
-        <section id="casestudy">
-          <CaseStudy />
-        </section>
-        <section id="testimonials">
-          <Testimonials />
-        </section>
-        <section id="faq">
-          <FAQ />
-        </section>
-        <section id="contact">
-          <Contact />
-        </section>
-      </main>
-      <Footer />
-      <Toaster />
-    </div>
+    <LanguageProvider>
+      <div className="App">
+        <Navigation />
+        <main>
+          <section id="hero">
+            <Hero />
+          </section>
+          <section id="painpoints">
+            <PainPoints />
+          </section>
+          <section id="about">
+            <About />
+          </section>
+          <section id="whymindhaus">
+            <WhyMindhaus />
+          </section>
+          <section id="methodology">
+            <Methodology />
+          </section>
+          <section id="services">
+            <Services />
+          </section>
+          <section id="casestudy">
+            <CaseStudy />
+          </section>
+          <section id="testimonials">
+            <Testimonials />
+          </section>
+          <section id="faq">
+            <FAQ />
+          </section>
+          <section id="contact">
+            <Contact />
+          </section>
+        </main>
+        <Footer />
+        <Toaster />
+      </div>
+    </LanguageProvider>
   );
 }
 
